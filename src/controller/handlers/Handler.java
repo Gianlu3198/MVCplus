@@ -1,5 +1,6 @@
 package controller.handlers;
 
-public class Handler {
+public class Handler 
+{
 
 }
