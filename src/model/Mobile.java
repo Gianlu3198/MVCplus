@@ -63,20 +63,14 @@ public class Mobile
     //METODI STANDARD
     //i 3 genera query
     //isValid
+    //rimpiazzaPlaceholder
 
     public String generaInsert()
     {
         String template = "INSERT INTO mobili (modello,materiale,colore,larghezza,altezza,profondita,peso) VALUES "+
                            "('[modello]','[materiale]','[colore]',[larghezza],[altezza],[profondita],[peso])";
 
-        template =  template
-                    .replace("[modello]", modello+"")
-                    .replace("[materiale]", materiale+"")
-                    .replace("[colore]", colore+"")
-                    .replace("[larghezza]", larghezza+"")
-                    .replace("[altezza]", altezza+"")
-                    .replace("[profondita]", profondita+"")
-                    .replace("[peso]", peso+"");
+        template =  rimpiazzaPlaceholder(template);
 
         return template;
     }
@@ -88,15 +82,8 @@ public class Mobile
                            " WHERE id=[id]";
                            
 
-        template =  template
-                    .replace("[modello]", modello+"")
-                    .replace("[materiale]", materiale+"")
-                    .replace("[colore]", colore+"")
-                    .replace("[larghezza]", larghezza+"")
-                    .replace("[altezza]", altezza+"")
-                    .replace("[profondita]", profondita+"")
-                    .replace("[peso]", peso+"")
-                    .replace("[id]", id+"");
+        template =  rimpiazzaPlaceholder(template);
+                    
 
         return template;
     }
@@ -104,6 +91,23 @@ public class Mobile
     public String generaDelete()
     {
         return "DELETE FROM mobili WHERE id="+id;
+    }
+
+    public String rimpiazzaPlaceholder(String template)
+    {
+        template =  template
+        .replace("[modello]", modello+"")
+        .replace("[materiale]", materiale+"")
+        .replace("[colore]", colore+"")
+        .replace("[larghezza]", larghezza+"")
+        .replace("[altezza]", altezza+"")
+        .replace("[profondita]", profondita+"")
+        .replace("[peso]", peso+""); 
+
+        if(template.contains("[id]"))
+            template.replace("[id]", id+"");
+
+        return template;
     }
 
     public boolean isValid()
