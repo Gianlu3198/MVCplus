@@ -27,6 +27,7 @@ public class MobileView
             res+= render(mobili.get(i))+"\n\n";
         }
 
+
         return res;
     }
 }
