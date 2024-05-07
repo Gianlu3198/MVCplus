@@ -63,6 +63,16 @@ public class MobileRepository
         return res;
     }
 
+    public Mobile selectById(int id)
+    {
+        ArrayList<Mobile> res =  selectWhere("id="+id);
+        
+        if(res.size()==0)
+            return null;
+        
+        return res.get(0);
+    }
+
     public boolean insert(Mobile daInserire)
     {
         if(!daInserire.isValid())
