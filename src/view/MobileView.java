@@ -8,7 +8,7 @@ public class MobileView
 {
     public String render(Mobile m)
     {
-        String template =   "Mobile [modello], costruito in lussuoso  [materiale] di colore [colore]\n" +
+        String template =   "Mobile [modello], costruito in lussuoso [materiale] di colore [colore]\n" +
                             "Altezza: [altezza] metri \n"                                               +
                             "Larghezza: [larghezza] metri\n"                                            +
                             "Profondità: [profondita] metri\n"                                          +

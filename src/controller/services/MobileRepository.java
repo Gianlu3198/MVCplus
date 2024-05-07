@@ -128,4 +128,13 @@ public class MobileRepository
     {
         db.delete("DELETE FROM mobili WHERE id="+id);
     }
+
+    /**
+     * Restiuisce l'id più alto nella tabella mobile (id dell'ultimo mobile inserito)
+     * @return
+     */
+    public int maxId()
+    {
+        return Integer.parseInt( db.select("SELECT id FROM mobili ORDER BY id DESC limit 1").get(0).split(",")[0]);
+    }
 }

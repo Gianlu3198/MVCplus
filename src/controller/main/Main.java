@@ -18,8 +18,8 @@ public class Main
 
             switch (cmd) 
             {
-                case "crea":
-                    Handler.crea();
+                case "creamobile":
+                    Handler.creaMobile();
                 break;
                 case "quit":
                     System.out.println("Programma terminato");
